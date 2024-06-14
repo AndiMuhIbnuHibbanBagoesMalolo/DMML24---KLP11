@@ -5,3 +5,6 @@
 ### Andi Raja Zulfaqar (H071211057)
 ### Michiko Tjiang (H071211013)
 ### Emilia Damayanti (H071211009)
+
+[Kanban Board](https://github.com/users/AndiMuhIbnuHibbanBagoesMalolo/projects/1/views/1)
+
