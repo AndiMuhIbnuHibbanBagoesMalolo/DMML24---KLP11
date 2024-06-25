@@ -52,4 +52,14 @@ if st.button('Prediksi BMI'):
     # Menampilkan hasil prediksi
     st.write(f'BMI Anda: {bmi:.2f}')
     st.image(gambar, width=200)
-    st.write(f'Interpretasi BMI: {interpretation}')
+    st.write(f'***{interpretation}***')
+    
+    # Menambahkan caption untuk interpretasi BMI
+    if interpretation == "Kekurangan berat badan (Underweight)":
+        st.write('**Individu dengan BMI di bawah 18.5 dapat dianggap memiliki berat badan kurang. Mereka mungkin perlu mempertimbangkan peningkatan asupan nutrisi untuk mencapai berat badan yang sehat.**')
+    elif interpretation == "Berat badan normal":
+        st.write('**BMI Anda berada dalam kisaran normal, menunjukkan berat badan yang sehat untuk tinggi badan Anda.**')
+    elif interpretation == "Kelebihan berat badan (Overweight)":
+        st.write('**Individu dengan BMI antara 25 dan 29.9 dianggap kelebihan berat badan. Mereka mungkin perlu mempertimbangkan untuk mengurangi kalori atau meningkatkan aktivitas fisik.**')
+    else:
+        st.write('**BMI Anda menunjukkan obesitas. Perubahan gaya hidup seperti diet sehat dan olahraga teratur dapat membantu mengurangi risiko masalah kesehatan.**')
