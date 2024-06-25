@@ -3,10 +3,13 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 import pickle
 
+
 # Judul aplikasi
-st.title('Prediksi Body Fat')
+st.title('Prediction Body Fat')
 
 # Input pengguna
+density = st.number_input('density', min_value=0, format="%d")
+bodyfat = st.number_input('bodyfat', min_value=0, format="%d")
 age = st.number_input('Age', min_value=0, format="%d")
 weight = st.number_input('Weight (lbs)', min_value=0.0, format="%.2f")
 height = st.number_input('Height (inches)', min_value=0.0, format="%.2f")
@@ -25,14 +28,14 @@ wrist = st.number_input('Wrist (cm)', min_value=0.0, format="%.2f")
 if st.button('Prediksi Body Fat'):
     # Memuat model yang telah dilatih
     try:
-        with open('estimasi_BodyFat.sav', 'rb') as file:
+        with open('bodyfat_model.pkl', 'rb') as file:
             model = pickle.load(file)
     except FileNotFoundError:
         st.error('Model tidak ditemukan. Harap pastikan Anda sudah melatih dan menyimpan model terlebih dahulu.')
         st.stop()
     
     # Menyiapkan data input untuk prediksi
-    input_data = np.array([[age, weight, height, neck, chest, abdomen, hip, thigh, knee, ankle, biceps, forearm, wrist]])
+    input_data = np.array([[density, age, weight, height, neck, chest, abdomen, hip, thigh, knee, ankle, biceps, forearm, wrist]])
     
     # Melakukan prediksi
     prediksi_body_fat = model.predict(input_data)
