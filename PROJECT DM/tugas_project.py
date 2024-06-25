@@ -8,8 +8,8 @@ import pickle
 st.title('Prediction Body Fat')
 
 # Input pengguna
-density = st.number_input('density', min_value=0, format="%d")
-bodyfat = st.number_input('bodyfat', min_value=0, format="%d")
+density = st.number_input('Density', min_value=0, format="%d")
+bodyfat = st.number_input('Bodyfat', min_value=0, format="%d")
 age = st.number_input('Age', min_value=0, format="%d")
 weight = st.number_input('Weight (lbs)', min_value=0.0, format="%.2f")
 height = st.number_input('Height (inches)', min_value=0.0, format="%.2f")
