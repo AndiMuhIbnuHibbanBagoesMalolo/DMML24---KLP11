@@ -5,8 +5,8 @@ import pickle
 st.title('Prediction BMI')
 
 # Input pengguna
-weight = st.number_input('Berat Badan (lbs)', min_value=0.0, format="%.2f")
-height = st.number_input('Tinggi Badan (inches)', min_value=0.0, format="%.2f")
+weight = st.slider('Berat Badan (lbs)', min_value=0.0, max_value=200.0, step=0.1, format="%.2f")
+height = st.slider('Tinggi Badan (inches)', min_value=0.0, max_value=300.0, step=0.1, format="%.2f")
 
 # Tombol untuk prediksi
 if st.button('Prediksi BMI'):
