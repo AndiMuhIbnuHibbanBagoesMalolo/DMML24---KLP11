@@ -28,7 +28,7 @@ wrist = st.number_input('Wrist (cm)', min_value=0.0, format="%.2f")
 if st.button('Prediksi Body Fat'):
     # Memuat model yang telah dilatih
     try:
-        with open('bodyfat_model.pkl', 'rb') as file:
+        with open('model/bodyfat_model.pkl', 'rb') as file:
             model = pickle.load(file)
     except FileNotFoundError:
         st.error('Model tidak ditemukan. Harap pastikan Anda sudah melatih dan menyimpan model terlebih dahulu.')
