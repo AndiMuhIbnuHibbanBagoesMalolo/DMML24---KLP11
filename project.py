@@ -5,50 +5,54 @@ import joblib
 # Fungsi untuk halaman Prediksi BMI
 def bmi_prediction():
     st.title('Prediksi BMI')
-    col1, col2 = st.columns([5, 5])
+    st.image('gambar/BMI-Infographic-1.jpg', width=400)
 
-    with col2:
-        st.image('gambar/BMI-Infographic-1.jpg', width=400)
+    weight = st.number_input('Berat Badan (kg)', min_value=0.0, max_value=200.0, step=0.1, format="%.2f")
+    height = st.number_input('Tinggi Badan (cm)', min_value=0.0, max_value=300.0, step=0.1, format="%.2f")
 
-    with col1:
-        weight = st.slider('Berat Badan (lbs)', min_value=0.0, max_value=200.0, step=0.1, format="%.2f")
-        height = st.slider('Tinggi Badan (inches)', min_value=0.0, max_value=300.0, step=0.1, format="%.2f")
+    if st.button('Prediksi BMI'):
+        try:
+            with open('model/mse.pkl', 'rb') as file:
+                model = joblib.load(file)
+        except FileNotFoundError:
+            st.error('Model BMI tidak ditemukan. Harap pastikan Anda sudah melatih dan menyimpan model terlebih dahulu.')
+            st.stop()
 
-        if st.button('Prediksi BMI'):
-            try:
-                with open('model/mse.pkl', 'rb') as file:
-                    model = joblib.load(file)
-            except FileNotFoundError:
-                st.error('Model BMI tidak ditemukan. Harap pastikan Anda sudah melatih dan menyimpan model terlebih dahulu.')
-                st.stop()
+        bmi = weight / ((height / 100) ** 2)
 
-            bmi = weight / ((height / 100) ** 2)
-
-            if bmi < 18.5:
-                interpretation = "Kekurangan berat badan (Underweight)"
-                gambar = 'gambar/underweight.jpg'
-            elif bmi < 25:
-                interpretation = "Berat badan normal"
-                gambar = 'gambar/normal.jpg'
-            elif bmi < 30:
-                interpretation = "Kelebihan berat badan (Overweight)"
-                gambar = 'gambar/overweight.jpg'
-            else:
-                interpretation = "Obesitas"
-                gambar = 'gambar/obesity.jpg'
-
-            st.write(f'BMI Anda: {bmi:.2f}')
-            st.image(gambar, width=200)
-            st.write(f'***{interpretation}***')
-
-            if interpretation == "Kekurangan berat badan (Underweight)":
-                st.write('**Individu dengan BMI di bawah 18.5 dapat dianggap memiliki berat badan kurang. Mereka mungkin perlu mempertimbangkan peningkatan asupan nutrisi untuk mencapai berat badan yang sehat.**')
-            elif interpretation == "Berat badan normal":
-                st.write('**BMI Anda berada dalam kisaran normal, menunjukkan berat badan yang sehat untuk tinggi badan Anda.**')
-            elif interpretation == "Kelebihan berat badan (Overweight)":
-                st.write('**Individu dengan BMI antara 25 dan 29.9 dianggap kelebihan berat badan. Mereka mungkin perlu mempertimbangkan untuk mengurangi kalori atau meningkatkan aktivitas fisik.**')
-            else:
-                st.write('**BMI Anda menunjukkan obesitas. Perubahan gaya hidup seperti diet sehat dan olahraga teratur dapat membantu mengurangi risiko masalah kesehatan.**')
+        if bmi < 18.5:
+            interpretation = "KEKURANGAN berat badan (Underweight)"
+            gambar = 'gambar/underweight.jpg'
+            color = '#4B70F5'
+        elif bmi < 25:
+            interpretation = "Berat badan NORMAL"
+            gambar = 'gambar/normalman.jpg'
+            color = '#06D001'
+        elif bmi < 30:
+            interpretation = "KELEBIHAN berat badan (Overweight)"
+            gambar = 'gambar/overweight.jpg'
+            color = '#FFF455'
+        else:
+            interpretation = "OBESITAS"
+            gambar = 'gambar/obesity.jpg'
+            color = '#E72929'
+            
+        st.write(f'BMI Anda : {bmi:.2f}')
+        st.image(gambar, width=200)
+        st.markdown(f'<p style="font-size:25px; color:{color};"><strong>{interpretation}</strong></p>', unsafe_allow_html=True)
+    
+        if interpretation == "KEKURANGAN berat badan (Underweight)":
+            st.write('**Individu dengan BMI di bawah 18.5 dapat dianggap memiliki berat badan kurang. Mereka mungkin perlu mempertimbangkan peningkatan asupan nutrisi untuk mencapai berat badan yang sehat.**  '
+            '[Lebih lanjut tentang Kekurangan Berat Badan](https://www.alodokter.com/faktor-penyebab-badan-kurus-dan-tips-sehat-untuk-mengatasinya)')
+        elif interpretation == "Berat badan NORMAL":
+            st.write('**BMI Anda berada dalam kisaran normal, menunjukkan berat badan yang sehat untuk tinggi badan Anda.**  '
+            '[Lebih lanjut tentang Berat Badan Normal](https://www.family.abbott/id-id/ensure/tools-and-resources/tips-on-how-to-live-strong/nutrition/menjaga-berat-badan.html)')
+        elif interpretation == "KELEBIHAN berat badan (Overweight)":
+            st.write('**Individu dengan BMI antara 25 dan 29.9 dianggap kelebihan berat badan. Mereka mungkin perlu mempertimbangkan untuk mengurangi kalori atau meningkatkan aktivitas fisik.**  '
+            '[Lebih lanjut tentang Kelebihan Berat Badan](https://www.alodokter.com/berat-badan-berlebih)')
+        else:
+            st.write('**BMI Anda menunjukkan obesitas. Perubahan gaya hidup seperti diet sehat dan olahraga teratur dapat membantu mengurangi risiko masalah kesehatan.**  '
+            '[Lebih lanjut tentang Obesitas](https://www.mitrakeluarga.com/artikel/obesitas)')
 
 # Fungsi untuk halaman Prediksi Body Fat
 def body_fat_prediction():
