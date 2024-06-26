@@ -56,22 +56,63 @@ def bmi_prediction():
 
 # Fungsi untuk halaman Prediksi Body Fat
 def body_fat_prediction():
-    st.title('Prediksi Body Fat')
-
-    density = st.number_input('Density', min_value=0.0, format="%.2f")
-    age = st.number_input('Age', min_value=0, format="%d")
-    weight = st.number_input('Weight (lbs)', min_value=0.0, format="%.2f")
-    height = st.number_input('Height (inches)', min_value=0.0, format="%.2f")
-    neck = st.number_input('Neck (cm)', min_value=0.0, format="%.2f")
-    chest = st.number_input('Chest (cm)', min_value=0.0, format="%.2f")
-    abdomen = st.number_input('Abdomen (cm)', min_value=0.0, format="%.2f")
-    hip = st.number_input('Hip (cm)', min_value=0.0, format="%.2f")
-    thigh = st.number_input('Thigh (cm)', min_value=0.0, format="%.2f")
-    knee = st.number_input('Knee (cm)', min_value=0.0, format="%.2f")
-    ankle = st.number_input('Ankle (cm)', min_value=0.0, format="%.2f")
-    biceps = st.number_input('Biceps (cm)', min_value=0.0, format="%.2f")
-    forearm = st.number_input('Forearm (cm)', min_value=0.0, format="%.2f")
-    wrist = st.number_input('Wrist (cm)', min_value=0.0, format="%.2f")
+    st.title('Prediksi Lemak Tubuh')
+    
+    # Input Density: Kepadatan tubuh dalam g/cm³
+    density = st.number_input('**Kepadatan**', min_value=0.0, format="%.2f")
+    st.write("Kepadatan tubuh, biasanya diukur dalam g/cm³. Ini adalah faktor dalam menghitung persentase lemak tubuh.")
+    
+    # Input Age: Usia dalam tahun
+    age = st.number_input('Usia', min_value=0, format="%d")
+    st.write("*Usia individu dalam tahun. Usia dapat mempengaruhi distribusi dan persentase lemak tubuh.*")
+    
+    # Input Weight: Berat badan dalam pon (lbs)
+    weight = st.number_input('**Berat Badan (lbs)**', min_value=0.0, format="%.2f")
+    st.write("*Berat badan individu dalam pon (lbs). Berat badan penting untuk menghitung persentase lemak tubuh.*")
+    
+    # Input Height: Tinggi badan dalam inci
+    height = st.number_input('**Tinggi Badan (inci)**', min_value=0.0, format="%.2f")
+    st.write("*Tinggi badan individu dalam inci. Tinggi badan adalah faktor penting lainnya dalam menghitung persentase lemak tubuh.*")
+    
+    # Input Neck: Lingkar leher dalam sentimeter (cm)
+    neck = st.number_input('**Lingkar Leher (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar leher dalam sentimeter (cm). Lingkar leher digunakan dalam berbagai formula estimasi lemak tubuh.*")
+    
+    # Input Chest: Lingkar dada dalam sentimeter (cm)
+    chest = st.number_input('**Lingkar Dada (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar dada dalam sentimeter (cm). Pengukuran dada dapat membantu menentukan distribusi lemak tubuh.*")
+    
+    # Input Abdomen: Lingkar perut dalam sentimeter (cm)
+    abdomen = st.number_input('**Lingkar Perut (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar perut dalam sentimeter (cm). Pengukuran perut penting untuk menilai lemak visceral.*")
+    
+    # Input Hip: Lingkar pinggul dalam sentimeter (cm)
+    hip = st.number_input('**Lingkar Pinggul (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar pinggul dalam sentimeter (cm). Pengukuran pinggul membantu memahami distribusi lemak tubuh.*")
+    
+    # Input Thigh: Lingkar paha dalam sentimeter (cm)
+    thigh = st.number_input('**Lingkar Paha (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar paha dalam sentimeter (cm). Pengukuran paha berkontribusi dalam memperkirakan total lemak tubuh.*")
+    
+    # Input Knee: Lingkar lutut dalam sentimeter (cm)
+    knee = st.number_input('**Lingkar Lutut (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar lutut dalam sentimeter (cm). Pengukuran lutut juga bisa menjadi bagian dari estimasi lemak tubuh.*")
+    
+    # Input Ankle: Lingkar pergelangan kaki dalam sentimeter (cm)
+    ankle = st.number_input('**Lingkar Pergelangan Kaki (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar pergelangan kaki dalam sentimeter (cm). Pengukuran pergelangan kaki mungkin digunakan dalam beberapa metode estimasi lemak tubuh.*")
+    
+    # Input Biceps: Lingkar bisep dalam sentimeter (cm)
+    biceps = st.number_input('**Lingkar Bisep (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar bisep dalam sentimeter (cm). Lingkar bisep dapat membantu menentukan massa otot versus lemak.*")
+    
+    # Input Forearm: Lingkar lengan bawah dalam sentimeter (cm)
+    forearm = st.number_input('**Lingkar Lengan Bawah (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar lengan bawah dalam sentimeter (cm). Pengukuran lengan bawah berkontribusi pada analisis komposisi tubuh secara keseluruhan.*")
+    
+    # Input Wrist: Lingkar pergelangan tangan dalam sentimeter (cm)
+    wrist = st.number_input('**Lingkar Pergelangan Tangan (cm)**', min_value=0.0, format="%.2f")
+    st.write("*Lingkar pergelangan tangan dalam sentimeter (cm). Lingkar pergelangan tangan digunakan dalam formula estimasi lemak tubuh.*")
 
     if st.button('Prediksi Body Fat'):
         try:
