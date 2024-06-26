@@ -56,61 +56,6 @@ def bmi_prediction():
 
 # Fungsi untuk halaman Prediksi Body Fat
 def body_fat_prediction():
-<<<<<<< HEAD
-    st.title('Prediksi Body Fat')
-
-    st.subheader('Density')
-    density = st.number_input('Density', min_value=0.0, format="%.2f")
-    
-    st.subheader('Age')
-    age = st.number_input('Age', min_value=0, format="%d")
-    
-    st.subheader('Weight')
-    weight = st.number_input('Weight (lbs)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Height')
-    height = st.number_input('Height (inches)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Neck Size (cm)')
-    st.image('gambar/neck.jpg', width=100)
-    neck = st.number_input('Neck (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Chest Size')
-    st.image('gambar/chest.jpg', width=100)
-    chest = st.number_input('Chest (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Abdoment Size')
-    st.image('gambar/normalman.jpg', width=100)
-    abdomen = st.number_input('Abdomen (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Hip Size')
-    st.image('gambar/hip.png', width=100)
-    hip = st.number_input('Hip (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Thigh Size')
-    st.image('gambar/thigh.png', width=100)
-    thigh = st.number_input('Thigh (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Knee Size')
-    st.image('gambar/knee.jpg', width=100)
-    knee = st.number_input('Knee (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Ankle Size')
-    st.image('gambar/ankle.jpg', width=100)
-    ankle = st.number_input('Ankle (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Biceps Size')
-    st.image('gambar/biceps.jpg', width=100)
-    biceps = st.number_input('Biceps (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Forearm Size')
-    st.image('gambar/forearm.jpg', width=100)
-    forearm = st.number_input('Forearm (cm)', min_value=0.0, format="%.2f")
-    
-    st.subheader('Wrist Size')
-    st.image('gambar/wrist.jpg', width=100)
-    wrist = st.number_input('Wrist (cm)', min_value=0.0, format="%.2f")
-=======
     st.title('Prediksi Lemak Tubuh')
     
     # Input Density: Kepadatan tubuh dalam g/cm³
@@ -168,7 +113,6 @@ def body_fat_prediction():
     # Input Wrist: Lingkar pergelangan tangan dalam sentimeter (cm)
     wrist = st.number_input('**Lingkar Pergelangan Tangan (cm)**', min_value=0.0, format="%.2f")
     st.write("*Lingkar pergelangan tangan dalam sentimeter (cm). Lingkar pergelangan tangan digunakan dalam formula estimasi lemak tubuh.*")
->>>>>>> cfff2c19d70caf1291f3fc877187dc2f5d1cbfea
 
     if st.button('Prediksi Body Fat'):
         try:
@@ -178,30 +122,10 @@ def body_fat_prediction():
             st.error('Model tidak ditemukan. Harap pastikan Anda sudah melatih dan menyimpan model terlebih dahulu.')
             st.stop()
 
-        input_data = np.array([[density, age, weight, height, neck, chest, abdomen,  hip, thigh, knee, ankle, biceps, forearm, wrist]])
+        input_data = np.array([[density, age, weight, height, neck, chest, abdomen, hip, thigh, knee, ankle, biceps, forearm, wrist]])
         prediksi_body_fat = model.predict(input_data)
 
         st.write(f'Prediksi Body Fat: {prediksi_body_fat[0]:.2f}%')
-        
-    # Interpretasi umum persentase lemak tubuh untuk pria
-        if prediksi_body_fat[0] < 6:
-            kategori = "Essential Fat"
-            penjelasan = "Lemak minimal yang diperlukan untuk fungsi tubuh yang normal."
-        elif prediksi_body_fat[0] <= 13:
-            kategori = "Atlet"
-            penjelasan = "Pria yang sangat aktif dan terlibat dalam kegiatan fisik atau olahraga tingkat tinggi."
-        elif prediksi_body_fat[0] <= 17:
-            kategori = "Kebugaran"
-            penjelasan = "Pria dengan kebugaran yang baik dan lemak tubuh yang sehat."
-        elif prediksi_body_fat[0] <= 24:
-            kategori = "Rata-rata"
-            penjelasan = "Pria dengan jumlah lemak tubuh yang biasa dan tidak terlalu berisiko."
-        else:
-            kategori = "Obesitas"
-            penjelasan = "Pria dengan lemak tubuh yang tinggi yang dapat menimbulkan risiko kesehatan."
-
-        st.write(f'Kategori: {kategori}')
-        st.write(f'Penjelasan: {penjelasan}')
 
 # Main function
 def main():
