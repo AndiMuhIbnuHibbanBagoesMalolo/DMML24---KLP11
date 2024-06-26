@@ -126,6 +126,26 @@ def body_fat_prediction():
         prediksi_body_fat = model.predict(input_data)
 
         st.write(f'Prediksi Body Fat: {prediksi_body_fat[0]:.2f}%')
+        
+    # Interpretasi umum persentase lemak tubuh untuk pria
+        if prediksi_body_fat[0] < 6:
+            kategori = "Essential Fat"
+            penjelasan = "Lemak minimal yang diperlukan untuk fungsi tubuh yang normal."
+        elif prediksi_body_fat[0] <= 13:
+            kategori = "Atlet"
+            penjelasan = "Pria yang sangat aktif dan terlibat dalam kegiatan fisik atau olahraga tingkat tinggi."
+        elif prediksi_body_fat[0] <= 17:
+            kategori = "Kebugaran"
+            penjelasan = "Pria dengan kebugaran yang baik dan lemak tubuh yang sehat."
+        elif prediksi_body_fat[0] <= 24:
+            kategori = "Rata-rata"
+            penjelasan = "Pria dengan jumlah lemak tubuh yang biasa dan tidak terlalu berisiko."
+        else:
+            kategori = "Obesitas"
+            penjelasan = "Pria dengan lemak tubuh yang tinggi yang dapat menimbulkan risiko kesehatan."
+
+        st.write(f'Kategori: {kategori}')
+        st.write(f'Penjelasan: {penjelasan}')
 
 # Main function
 def main():
