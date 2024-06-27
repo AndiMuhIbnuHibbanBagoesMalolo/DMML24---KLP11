@@ -39,21 +39,21 @@ Wrist circumference (cm)
 - [Link Laporan](https://docs.google.com/document/d/1rODsBVXVni30jkYu5ImpwMoNxLB1Jx_FSnWPyb8JPHk/edit?usp=sharing)
 
 ## Project Structure
-📦DMML24-ProjectTask
-┣ 📂Dataset
-┃  ┗ 📜bodyfat.csv
-┣ 📂Gambar
-┣ 📂Model
-┃  ┣ 📜bodyfat_model.pkl
-┃  ┣ 📜model2.pkl
-┃  ┣ 📜model3.pkl
-┃  ┣ 📜mse.pkl
-┃  ┣ 📜mse1.pkl
-┃  ┗ 📜rmse.pkl
-┣ 📜estimasi_BodyFat.sav
-┣ 📜modell.ipnyb
-┣ 📜project.py
-┗ 📜README.md
+- 📦DMML24-ProjectTask
+- ┣ 📂Dataset
+- ┃  ┗ 📜bodyfat.csv
+- ┣ 📂Gambar
+- ┣ 📂Model
+- ┃  ┣ 📜bodyfat_model.pkl
+- ┃  ┣ 📜model2.pkl
+- ┃  ┣ 📜model3.pkl
+- ┃  ┣ 📜mse.pkl
+- ┃  ┣ 📜mse1.pkl
+- ┃  ┗ 📜rmse.pkl
+- ┣ 📜estimasi_BodyFat.sav
+- ┣ 📜modell.ipnyb
+- ┣ 📜project.py
+- ┗ 📜README.md
 
 ## Tampilan Aplikasi
 <h4 align="center">Tampilan Menu Prediksi BMI</h4>
