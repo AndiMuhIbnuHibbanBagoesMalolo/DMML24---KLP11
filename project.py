@@ -7,8 +7,8 @@ def bmi_prediction():
     st.title('Prediksi BMI')
     st.image('gambar/BMI-Infographic-1.jpg', width=400)
 
-    weight = st.number_input('Berat Badan (kg)', min_value=0.0, max_value=200.0, step=0.1, format="%.2f")
-    height = st.number_input('Tinggi Badan (cm)', min_value=0.0, max_value=300.0, step=0.1, format="%.2f")
+    weight = st.slider('Berat Badan (kg)', min_value=0.0, max_value=200.0, step=1.0, format="%.2f")
+    height = st.slider('Tinggi Badan (cm)', min_value=0.0, max_value=300.0, step=1.0, format="%.2f")
 
     if st.button('Prediksi BMI'):
         try:
