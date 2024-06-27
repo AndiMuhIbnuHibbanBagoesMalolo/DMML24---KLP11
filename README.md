@@ -13,26 +13,27 @@ Data on estimated body fat can be used to estimate the percentage of fat, allowi
 The objective of the analysis is to understand the relationship between body circumference measurements and body weight with body fat percentage, and to develop a predictive model to estimate body fat percentage.
 
 - The variables listed below, from left to right, are:
-Density determined from underwater weighing
-Percent body fat from Siri's (1956) equation
-Age (years)
-Weight (lbs)
-Height (inches)
-Neck circumference (cm)
-Chest circumference (cm)
-Abdomen 2 circumference (cm)
-Hip circumference (cm)
-Thigh circumference (cm)
-Knee circumference (cm)
-Ankle circumference (cm)
-Biceps (extended) circumference (cm)
-Forearm circumference (cm)
-Wrist circumference (cm)
+- Density determined from underwater weighing
+- Percent body fat from Siri's (1956) equation
+- Age (years)
+- Weight (lbs)
+- Height (inches)
+- Neck circumference (cm)
+- Chest circumference (cm)
+- Abdomen 2 circumference (cm)
+- Hip circumference (cm)
+- Thigh circumference (cm)
+- Knee circumference (cm)
+- Ankle circumference (cm)
+- Biceps (extended) circumference (cm)
+- Forearm circumference (cm)
+- Wrist circumference (cm)
 
 # Dataset
 - [Link Dataset](https://www.kaggle.com/datasets/fedesoriano/body-fat-prediction-dataset/data)
 
-## [Kanban Board](https://github.com/users/AndiMuhIbnuHibbanBagoesMalolo/projects/1/views/1)
+## Kanban Board
+- [Kanban Board](https://github.com/users/AndiMuhIbnuHibbanBagoesMalolo/projects/1/views/1)
 
 ## PPT dan Laporan
 - [Link PPT](https://www.canva.com/design/DAGIGdIJ4FI/_-VkWtdiZ9WgbQW3ts8TkQ/edit?utm_content=DAGIGdIJ4FI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
@@ -54,16 +55,3 @@ Wrist circumference (cm)
 - ┣ 📜modell.ipnyb
 - ┣ 📜project.py
 - ┗ 📜README.md
-
-## Tampilan Aplikasi
-<h4 align="center">Tampilan Menu Prediksi BMI</h4>
-![alt text](https://github.com/AndiRajaZulfaqar/MY-GIT-HUB/blob/master/Screenshot%202024-06-27%20231257.png)
-
-<h4 align="center">Tampilan Menu BodyFat</h4>
-![alt text](https://github.com/AndiRajaZulfaqar/MY-GIT-HUB/blob/master/Screenshot%202024-06-27%20231316.png)
-
-<h4 align="center">Hasil Prediksi BMI</h4>
-![alt text](https://github.com/AndiRajaZulfaqar/MY-GIT-HUB/blob/master/Screenshot%202024-06-27%20231346.png)
-
-<h4 align="center">Hasil Prediksi BodyFat</h4>
-![alt text](https://github.com/AndiRajaZulfaqar/MY-GIT-HUB/blob/master/Screenshot%202024-06-27%20231410.png)
