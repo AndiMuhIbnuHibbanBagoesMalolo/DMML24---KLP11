@@ -1,5 +1,7 @@
-# DMML24-KLP11
+# BodyFat and BMI Predictor
+![Link Foto](https://github.com/AndiMuhIbnuHibbanBagoesMalolo/DMML24-KLP11/blob/main/gambar/appImg.png)
 
+### DMML24-KLP11
 - Muhammad Arya Ramdani (H071211052) - Leader
 - Andi Muh. Ibnu Hibban Bagoes Malolo (H071211060)
 - Andi Raja Zulfaqar (H071211057)
